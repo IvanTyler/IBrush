@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBrush</title>
+    <link rel="stylesheet" href="/src/public/css/main.css">
+    <script defer src="/src/public/javaScript/main.js"></script>
+</head>
+
+<body>
+    <div class="wrapper-main">
+        <header class="header">
+            <div class="container container-header">
+                <a href="/" class="header__link">
+                    <img src="/src/public/icon/logo.svg" alt="logo" class="header__logo">
+                </a>
+                <ul class="header-nav-menu">
+                    <li class="header-nav-menu__item">
+                        <span href="#furnishingProcess" class="header-nav-menu__text">Статьи</span>
+                    </li>
+                    <li id="courses" class="header-nav-menu__item">
+                        <span href="#designProject" class="header-nav-menu__text">Курсы</span>
+                        <ul class="javaScript-courses-list">
+                            <li class="javaScript-courses-list__item">
+                                JavaScript Pro
+                            </li>
+                            <li class="javaScript-courses-list__item">
+                                JavaScript для новчиков
+                            </li>
+                            <li class="javaScript-courses-list__item">
+                                JavaScript ниндзя
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <span href="#faq" class="header-nav-menu__text">Новости</span>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <span target="_blank" class="header-nav-menu__text">
+                            О нас
+                        </span>
+                    </li>
+                </ul>
+                <button class="header__button">
+                    Начать учиться
+                </button>
+                <img src="/src/public/icon/sendwitch.svg" alt="Открыть меню" class="header__sandwich">
+            </div>
+        </header>
+        <main class="main">
+            <section class="path-js">
+                <div class="container container-path-js">
+                    <h1 class="path-js__title">
+                        Путь JavaScript
+                    </h1>
+                    <div class="path-js-books">
+                        <div class="path-js-books__wrapper-img">
+                            <div class="path-js-date">
+                                <span class="path-js-date__number">
+                                    12
+                                </span>
+                                <span class="path-js-date__month">
+                                    Апреля
+                                </span>
+                            </div>
+                            <img src="/src/public/img/books.png" alt="books" class="path-js-books__img">
+                        </div>
+                    </div>
+                    <span class="path-js__text">
+                        Можно выделить три основных направления для прогресса JavaScript
+                    </span>
+                    <div class="path-js__line"></div>
+                </div>
+            </section>
+            <section class="server-js">
+                <div class="container server-js-container">
+                    <h2 class="server-js__title">
+                        Серверный JavaScript
+                    </h2>
+                    <div class="server-js-content">
+                        <img src="/src/public/icon/quotation.svg" alt="quotation" class="server-js-content__img">
+                        <div class="server-js-content__description">
+                            Разработчики и клиенты часто неправильно понимают, что такое система.
+                            Они видят графический интерфейс и думают, что он и есть система.
+                            Они определяют систему в терминах графического интерфейса и считают,
+                            что должны сразу начать работу с графическим интерфейсом.
+                            Они не понимают важнейшего принципа: ввод/вывод не важен.
+                        </div>
+                        <span class="server-js-content__author">
+                            — Р. Мартин
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <section class="banner">
+                <div class="container container-banner">
+                    <div class="banner__wrapper">
+                        <img src="/src/public/img/banner.png" alt="books" class="banner__img">
+                        <img src="/src/public/img/banner-mobile.png" alt="books" class="banner__img-mobile">
+                    </div>
+                    <span class="banner__text">
+                        Реклама на
+                        <a href="http://blabla.com/" target="_blank" class="banner__link">
+                            blabla.com
+                        </a>
+                    </span>
+                </div>
+            </section>
+            <section class="conclusion">
+                <div class="container conclusion-container">
+                    <h2 class="conclusion">Заключение</h2>
+                    <div class="conclusion__description">
+                        Синхрония осознаёт сюжетный верлибр.
+                        Мифопорождающее текстовое устройство диссонирует лирический субъект.
+                        Абстрактное высказывание пространственно просветляет деструктивный символ.
+                        Ямб, несмотря на то, что все эти характерологические черты отсылают
+                        не к единому образу нарратора, интегрирует мифопоэтический хронотоп.
+                        Действительно, ударение приводит палимпсест. Контрапункт приводит ритм.
+                    </div>
+                </div>
+            </section>
+            <section class="review">
+                <div class="container container-review">
+                    <h2 class="review__title">
+                        Что вы думаете об этой книге?
+                    </h2>
+                    <div class="article-evaluation">
+                        <h3 class="article-evaluation__title">
+                            Оцените статью
+                        </h3>
+                        <span class="article-evaluation__number">4</span>
+                        <ul class="article-evaluation-rating">
+                            <li class="article-evaluation-rating__item"></li>
+                            <li class="article-evaluation-rating__item"></li>
+                            <li class="article-evaluation-rating__item"></li>
+                            <li class="article-evaluation-rating__item"></li>
+                            <li class="article-evaluation-rating__item"></li>
+                        </ul>
+                    </div>
+                    <form action="" class="form-review">
+                        <h3 class="form-review__title">
+                            Добавить комментарий к книге
+                        </h3>
+                        <div class="form-review__wrapper-input">
+                            <input type="text" class="form-review__input">
+                        </div>
+                        <div class="form-review__wrapper-input">
+                            <input type="text" class="form-review__input">
+                        </div>
+                        <div class="form-review__wrapper-input">
+                            <input type="text" class="form-review__input">
+                        </div>
+                        <div class="form-review__wrapper-input">
+                            <input type="text" class="form-review__input">
+                        </div>
+                        <button class="form-review__button">Отправить</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container container-footer">
+                <h2 class="footer__title">Похожие посты</h2>
+                <ul class="posts-list">
+                    <li class="posts-list-item">
+                        <div class="posts-list-item__wrapper">
+                            <img src="" alt="" class="posts-list-item__img">
+                        </div>
+                        <span class="posts-list-item__date">12 декабря</span>
+                        <span class="posts-list-item__name">
+                            События жизненного цикла ReactJS
+                        </span>
+                    </li>
+                    <li class="posts-list-item">
+                        <div class="posts-list-item__wrapper">
+                            <img src="" alt="" class="posts-list-item__img">
+                            <span class="posts-list-item__date">12 декабря</span>
+                            <span class="posts-list-item__name">
+                                CSS Grids. Полное руководство
+                            </span>
+                        </div>
+                    </li>
+                    <li class="posts-list-item">
+                        <div class="posts-list-item__wrapper">
+                            <img src="" alt="" class="posts-list-item__img">
+                            <span class="posts-list-item__date">12 декабря</span>
+                            <span class="posts-list-item__name">
+                                Асинхронность в JavaScript
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal">
+        <div class="container container-modal">
+            <form action="" class="form-start-studying">
+                <img src="/src/public/icon/close.svg" alt="Закрыть модальное окно" class="form-start-studying__close">
+                <h2 class="form-start-studying__title">
+                    Начать учиться
+                </h2>
+                <h3 class="form-start-studying__sub-title">
+                    Оставьте заявку и наш менеджер вам перезвонит.
+                </h3>
+                <div class="form-start-studying__wrapper-input">
+                    <span class="form-start-studying__text">Как Вас зовут</span>
+                    <input type="text" class="form-start-studying__input">
+                </div>
+                <div class="form-start-studying__wrapper-input">
+                    <span class="form-start-studying__text">Ваш email</span>
+                    <input type="text" class="form-start-studying__input">
+                </div>
+                <button class="form-start-studying__button">Отправить</button>
+
+                <div class="form-start-studying__privacy-policy">
+                    Нажимая кнопку «Отправить», вы соглашаетесь с
+                    <a href="" class="form-start-studying__link">
+                        политикой конфиденциальности
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

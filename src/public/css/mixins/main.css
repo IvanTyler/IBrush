@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-main_1);
+  background-color: var(--color-main_1);
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 500;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.button:hover {
+  background-color: #271791;
+}
+.input {
+  border-radius: 10px;
+  border: solid 1px #EDEDF1;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-main_1);
+}
