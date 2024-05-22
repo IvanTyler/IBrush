@@ -34,69 +34,6 @@
     }
 }
 
-.path-js-books {
-    grid-area: path-js-books;
-    margin-top: clamp(21px, 3vw, 37px);
-    overflow-x: auto;
-    padding-bottom: 17px;
-
-    &__wrapper-img {
-        position: relative;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--color-main_1);
-        border-radius: 7px;
-    }
-
-    &::-webkit-scrollbar {
-        height: 5px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: #ECECF3;
-        border-radius: 7px;
-    }
-}
-
-.path-js-date {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 112px;
-    height: 100px;
-    padding: 22px 28px;
-    border-radius: 18px;
-    background-color: rgba(255, 255, 255, .9);
-
-    &__number {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 25px;
-
-        &::after {
-            content: '';
-            background-image: url('/src/public/icon/arrow-right.svg');
-            background-repeat: no-repeat;
-            width: 6px;
-            height: 7px;
-        }
-    }
-
-    &__month,
-    &__number {
-        font-family: var(--font-main_1);
-        font-weight: 500;
-    }
-}
-
 .container-path-js {
     display: grid;
     grid-template-columns: 1fr;

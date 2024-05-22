@@ -79,27 +79,25 @@
                     <h2 class="server-js__title">
                         Серверный JavaScript
                     </h2>
-                    <div class="server-js-content">
-                        <img src="/src/public/icon/quotation.svg" alt="quotation" class="server-js-content__img">
-                        <div class="server-js-content__description">
-                            Разработчики и клиенты часто неправильно понимают, что такое система.
-                            Они видят графический интерфейс и думают, что он и есть система.
-                            Они определяют систему в терминах графического интерфейса и считают,
-                            что должны сразу начать работу с графическим интерфейсом.
-                            Они не понимают важнейшего принципа: ввод/вывод не важен.
-                        </div>
-                        <span class="server-js-content__author">
-                            — Р. Мартин
-                        </span>
+                    <img src="/src/public/icon/quotation.svg" alt="quotation" class="server-js__img">
+                    <div class="server-js__description">
+                        Разработчики и клиенты часто неправильно понимают, что такое система.
+                        Они видят графический интерфейс и думают, что он и есть система.
+                        Они определяют систему в терминах графического интерфейса и считают,
+                        что должны сразу начать работу с графическим интерфейсом.
+                        Они не понимают важнейшего принципа: ввод/вывод не важен.
                     </div>
+                    <span class="server-js__author">
+                        — Р. Мартин
+                    </span>
                 </div>
             </section>
             <section class="banner">
                 <div class="container container-banner">
-                    <div class="banner__wrapper">
-                        <img src="/src/public/img/banner.png" alt="books" class="banner__img">
-                        <img src="/src/public/img/banner-mobile.png" alt="books" class="banner__img-mobile">
-                    </div>
+                    <picture>
+                        <source media="(max-width:680px)" srcset="/src/public/img/banner-mobile.png">
+                        <img src="/src/public/img/banner.png" alt="banner">
+                    </picture>
                     <span class="banner__text">
                         Реклама на
                         <a href="http://blabla.com/" target="_blank" class="banner__link">
@@ -110,7 +108,7 @@
             </section>
             <section class="conclusion">
                 <div class="container conclusion-container">
-                    <h2 class="conclusion">Заключение</h2>
+                    <h2 class="conclusion__title">Заключение</h2>
                     <div class="conclusion__description">
                         Синхрония осознаёт сюжетный верлибр.
                         Мифопорождающее текстовое устройство диссонирует лирический субъект.
@@ -132,10 +130,10 @@
                         </h3>
                         <span class="article-evaluation__number">4</span>
                         <ul class="article-evaluation-rating">
-                            <li class="article-evaluation-rating__item"></li>
-                            <li class="article-evaluation-rating__item"></li>
-                            <li class="article-evaluation-rating__item"></li>
-                            <li class="article-evaluation-rating__item"></li>
+                            <li class="article-evaluation-rating__item active"></li>
+                            <li class="article-evaluation-rating__item active"></li>
+                            <li class="article-evaluation-rating__item active"></li>
+                            <li class="article-evaluation-rating__item active"></li>
                             <li class="article-evaluation-rating__item"></li>
                         </ul>
                     </div>
@@ -144,16 +142,22 @@
                             Добавить комментарий к книге
                         </h3>
                         <div class="form-review__wrapper-input">
-                            <input type="text" class="form-review__input">
+                            <input type="text" class="form_input form-review__input">
+                            <span class="form-review__text">Имя</span>
                         </div>
                         <div class="form-review__wrapper-input">
-                            <input type="text" class="form-review__input">
+                            <input type="text" class="form_input form-review__input">
+                            <span class="form-review__text">Email</span>
                         </div>
                         <div class="form-review__wrapper-input">
-                            <input type="text" class="form-review__input">
+                            <textarea type="text" class="form_input form-review__input"></textarea>
+                            <span class="form-review__text">Ваш отзыв</span>
                         </div>
-                        <div class="form-review__wrapper-input">
-                            <input type="text" class="form-review__input">
+                        <div class="books">
+                            <div class="books__item select-book">
+                                <span class="select-book__type">Выберите книгу</span>
+                                <ul class="select-book-list"></ul>
+                            </div>
                         </div>
                         <button class="form-review__button">Отправить</button>
                     </form>
@@ -163,34 +167,41 @@
         <footer class="footer">
             <div class="container container-footer">
                 <h2 class="footer__title">Похожие посты</h2>
-                <ul class="posts-list">
-                    <li class="posts-list-item">
-                        <div class="posts-list-item__wrapper">
-                            <img src="" alt="" class="posts-list-item__img">
-                        </div>
-                        <span class="posts-list-item__date">12 декабря</span>
-                        <span class="posts-list-item__name">
-                            События жизненного цикла ReactJS
-                        </span>
-                    </li>
-                    <li class="posts-list-item">
-                        <div class="posts-list-item__wrapper">
-                            <img src="" alt="" class="posts-list-item__img">
+                <div class="posts-list-wrapper">
+                    <ul class="posts-list">
+                        <li class="posts-list-item">
+                            <div class="posts-list-item__wrapper">
+                                <img src="/src/public/img/react.png" alt="react" class="posts-list-item__img">
+                            </div>
+                            <span class="posts-list-item__date">12 декабря</span>
+                            <span class="posts-list-item__name">
+                                События жизненного цикла ReactJS
+                            </span>
+                        </li>
+                        <li class="posts-list-item">
+                            <div class="posts-list-item__wrapper">
+                                <img src="/src/public/img/grid.png" alt="grid" class="posts-list-item__img">
+                            </div>
                             <span class="posts-list-item__date">12 декабря</span>
                             <span class="posts-list-item__name">
                                 CSS Grids. Полное руководство
                             </span>
-                        </div>
-                    </li>
-                    <li class="posts-list-item">
-                        <div class="posts-list-item__wrapper">
-                            <img src="" alt="" class="posts-list-item__img">
+                        </li>
+                        <li class="posts-list-item">
+                            <div class="posts-list-item__wrapper">
+                                <img src="/src/public/img/js.png" alt="javaScript" class="posts-list-item__img">
+                            </div>
                             <span class="posts-list-item__date">12 декабря</span>
                             <span class="posts-list-item__name">
                                 Асинхронность в JavaScript
                             </span>
-                        </div>
-                    </li>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="posts-switch-slider">
+                    <li class="posts-switch-slider__item active"></li>
+                    <li class="posts-switch-slider__item"></li>
+                    <li class="posts-switch-slider__item"></li>
                 </ul>
             </div>
         </footer>
@@ -207,12 +218,12 @@
                     Оставьте заявку и наш менеджер вам перезвонит.
                 </h3>
                 <div class="form-start-studying__wrapper-input">
+                    <input type="text" class="form_input form-start-studying__input">
                     <span class="form-start-studying__text">Как Вас зовут</span>
-                    <input type="text" class="form-start-studying__input">
                 </div>
                 <div class="form-start-studying__wrapper-input">
+                    <input type="text" class="form_input form-start-studying__input">
                     <span class="form-start-studying__text">Ваш email</span>
-                    <input type="text" class="form-start-studying__input">
                 </div>
                 <button class="form-start-studying__button">Отправить</button>
 

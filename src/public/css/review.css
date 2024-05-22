@@ -55,23 +55,17 @@
   color: var(--color-main_3);
   transition: var(--transition);
 }
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: opacity ease-in-out 0.3s;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(32, 35, 2, 0.7);
-  z-index: 9999999;
+.review {
+  background-color: #F1F1F3;
 }
-.container-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+.review__title {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: clamp(31px, 3vw, 43px);
+  font-family: var(--font-main_1);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.container-review {
+  padding-top: clamp(22px, 7vw, 53px);
+  padding-bottom: clamp(50px, 7vw, 88px);
 }

@@ -16,7 +16,7 @@
   color: var(--color-main_2);
   font-family: var(--font-main_1);
 }
-@media (max-width: 670px) {
+@media (max-width: 680px) {
   .javaScript-courses-list {
     box-shadow: 0 8px 48px 0px rgba(0, 0, 0, 0.12);
   }

@@ -10,6 +10,11 @@ $courses.addEventListener('click', (e) => {
 
     activeBlock($courses)
     activeBlock($courses_list)
+    $button_open_modal.style.zIndex = '-1'
+
+    if (!$courses.classList.contains('open')) {
+        $button_open_modal.style.zIndex = '0'
+    }
 })
 
 $courses_list.addEventListener('click', (e) => e.stopPropagation())
@@ -21,6 +26,8 @@ function activeBlock(element) {
         element.classList.add('open')
 }
 
+
+
 $sandwitch.addEventListener('click', (e) => {
     e.stopPropagation()
 
@@ -29,6 +36,8 @@ $sandwitch.addEventListener('click', (e) => {
 })
 
 document.addEventListener('click', (e) => {
+    $button_open_modal.style.zIndex = '0'
+
     containsClass($courses)
     containsClass($courses_list)
     containsClass($header_menu)
@@ -47,11 +56,20 @@ window.addEventListener('scroll', () => {
         $header.classList.add('scroll') :
         $header.classList.remove('scroll')
 })
+document.querySelectorAll('.form_input').forEach(el => {
+    el.addEventListener('input', (e) => addFocusOverInput(e))
+});
+
+function addFocusOverInput(e) {
+    const inputValueLength = e.target.value.trim().length
+    inputValueLength > 0 ?
+        e.target.classList.add('focus') :
+        e.target.classList.remove('focus')
+}
 const $modal = document.querySelector('.modal');
 const $form_start_studying = document.querySelector('.form-start-studying');
 const $close_modal = document.querySelector('.form-start-studying__close');
 const $button_open_modal = document.querySelector('.header__button');
-
 
 $close_modal.addEventListener('click', () => $modal.style.display = 'none');
 $modal.addEventListener('click', () => $modal.style.display = 'none');
@@ -59,129 +77,149 @@ $modal.addEventListener('click', () => $modal.style.display = 'none');
 $form_start_studying.addEventListener('click', (e) => e.stopPropagation());
 
 $button_open_modal.addEventListener('click', () => $modal.style.display = 'block');
-// const $stages_slider = document.querySelector('.stages-transformation-list')
-// const $stages_slider_items = document.querySelectorAll('.stages-transformation-card')
-// const $stages_slider_item = document.querySelector('.stages-transformation-card')
 
-// const $stages_slider_prev = document.querySelector('.switch-slider-button.prev.stages')
-// const $stages_slider_next = document.querySelector('.switch-slider-button.next.stages')
 
-// const $stages_switch_items = document.querySelectorAll('.stages-switch-slider__item')
+const $post_slider = document.querySelector('.posts-list')
+const $post_slider_items = document.querySelectorAll('.posts-list-item')
+const $post_slider_item = document.querySelector('.posts-list-item')
 
-// let countSlideStages = 0
-// let widthStagesSlider = 0
+const $post_switch_items = document.querySelectorAll('.posts-switch-slider__item')
 
-// function nextSlide() {
-//     let currentElement;
+let countSlideStages = 0
+let widthStagesSlider = 0
 
-//     $stages_switch_items.forEach((el, i) => {
-//         if (el.classList.contains('active')) {
-//             el.classList.remove('active')
-//             currentElement = el.nextElementSibling
-//         }
-//     })
+function nextSlide() {
+    let currentElement;
 
-//     currentElement.classList.add('active');
-// }
+    $post_switch_items.forEach((el, i) => {
+        if (el.classList.contains('active')) {
+            el.classList.remove('active')
+            currentElement = el.nextElementSibling
+        }
+    })
 
-// function prevSlide() {
-//     let currentElement;
+    currentElement.classList.add('active');
+}
 
-//     $stages_switch_items.forEach((el, i) => {
-//         if (el.classList.contains('active')) {
-//             el.classList.remove('active')
-//             currentElement = el.previousElementSibling
-//         }
-//     })
-//     currentElement.classList.add('active');
-// }
+function prevSlide() {
+    let currentElement;
 
-// $stages_slider_next.addEventListener('click', () => {
-//     countSlideStages++
-//     widthStagesSlider = widthStagesSlider + $stages_slider_item.offsetWidth + 20
+    $post_switch_items.forEach((el, i) => {
+        if (el.classList.contains('active')) {
+            el.classList.remove('active')
+            currentElement = el.previousElementSibling
+        }
+    })
+    currentElement.classList.add('active');
+}
 
-//     if (countSlideStages > 0) {
-//         $stages_slider_prev.classList.remove('disabled')
-//         $stages_slider_prev.disabled = false
-//     }
-//     if (countSlideStages === $stages_slider_items.length - 1) {
-//         $stages_slider_next.classList.add('disabled')
-//         $stages_slider_next.disabled = true
-//     }
+$post_switch_items?.forEach((el, i) => {
+    el.addEventListener('click', () => {
+        $post_switch_items.forEach((el) => {
+            el.classList.remove('active')
+        })
+        el.classList.add('active')
 
-//     nextSlide()
-//     rollSlider()
-// })
+        setCurrentWidtSlider(i)
+    })
+})
+function setCurrentWidtSlider(index) {
+    widthStagesSlider = 0
+    countSlideStages = index
 
-// $stages_slider_prev.addEventListener('click', () => {
-//     countSlideStages--
-//     widthStagesSlider = widthStagesSlider - $stages_slider_item.offsetWidth - 20
+    for (let i = 0; i < countSlideStages; i++) {
+        widthStagesSlider = widthStagesSlider + $post_slider_item.offsetWidth + 30
+    }
 
-//     if (countSlideStages === 0) {
-//         $stages_slider_prev.classList.add('disabled')
-//         $stages_slider_prev.disabled = true
-//     }
-//     if (countSlideStages < $stages_slider_items.length - 1) {
-//         $stages_slider_next.classList.remove('disabled')
-//         $stages_slider_next.disabled = false
-//     }
+    rollSlider()
+}
 
-//     prevSlide()
-//     rollSlider()
-// })
+const currentWidthStagesSlider = () => {
+    const widthWindow = window.innerWidth;
+    widthWindow <= 500 ?
+        $post_slider.style.transform = 'translate(-' + widthStagesSlider + 'px)' :
+        $post_slider.style.transform = 'translate(-' + 0 + 'px)'
+}
 
-// $stages_switch_items?.forEach((el, i) => {
-//     el.addEventListener('click', () => {
-//         $stages_switch_items.forEach((el) => {
-//             el.classList.remove('active')
-//         })
-//         el.classList.add('active')
+function rollSlider() {
+    currentWidthStagesSlider()
+}
 
-//         setCurrentWidtSlider(i)
-//     })
-// })
+window.addEventListener('resize', () => {
+    rollSlider
+    currentWidthStagesSlider()
+})
 
-// function setCurrentWidtSlider(index) {
-//     widthStagesSlider = 0
-//     countSlideStages = index
+const $selectTypeSystem = document.querySelector('.select-book')
+const $selectTypeSystemList = document.querySelector('.select-book-list')
+const $selectTypeSystemType = document.querySelector('.select-book__type')
 
-//     if (countSlideStages > 0) {
-//         $stages_slider_prev.classList.remove('disabled')
-//         $stages_slider_prev.disabled = false
-//     }
-//     if (countSlideStages === $stages_slider_items.length - 1) {
-//         $stages_slider_next.classList.add('disabled')
-//         $stages_slider_next.disabled = true
-//     }
+function getBooks() {
+    const books = [
+        {
+            id: 1,
+            name: 'JavaScript ниндзя',
+        },
+        {
+            id: 2,
+            name: 'Pragmatic Guide to JavaScript',
+        },
+        {
+            id: 3,
+            name: 'Pro JavaScript Techniques',
+        },
+        {
+            id: 4,
+            name: 'Выразительный JavaScript',
+        }
+    ]
+    return books
+}
 
-//     if (countSlideStages === 0) {
-//         $stages_slider_prev.classList.add('disabled')
-//         $stages_slider_prev.disabled = true
-//     }
-//     if (countSlideStages < $stages_slider_items.length - 1) {
-//         $stages_slider_next.classList.remove('disabled')
-//         $stages_slider_next.disabled = false
-//     }
+const typesSystemList = getBooks()
 
-//     for (let i = 0; i < countSlideStages; i++) {
-//         widthStagesSlider = widthStagesSlider + $stages_slider_item.offsetWidth + 20
-//     }
+function createTypesSystemListHTML(typesSystemList) {
+    return typesSystemList.map(el => {
+        return `<li class="select-book-list__option" data-option data-id="${el.id}">${el.name}</li>`
+    }).join('');
+}
 
-//     rollSlider()
-// }
+function addTypesSystemHTML() {
+    const dataTypesSystemHTML = createTypesSystemListHTML(typesSystemList);
+    $selectTypeSystemList.innerHTML = ''
+    $selectTypeSystemList.insertAdjacentHTML('afterbegin', dataTypesSystemHTML)
+}
 
-// const currentWidthStagesSlider = () => {
-//     const widthWindow = window.innerWidth;
-//     widthWindow <= 395 ?
-//         $stages_slider.style.transform = 'translate(-' + widthStagesSlider + 'px)' :
-//         $stages_slider.style.transform = 'translate(-' + 0 + 'px)'
-// }
+addTypesSystemHTML()
+$selectTypeSystem.addEventListener('click', (e) => {
+    if ($selectTypeSystem.classList.contains('active')) {
+        $selectTypeSystem.classList.remove('active')
+    } else {
+        $selectTypeSystem.classList.add('active')
+    }
+})
 
-// function rollSlider() {
-//     currentWidthStagesSlider()
-// }
+const $selectTypeSystemOptions = document.querySelectorAll('.select-book-list__option')
 
-// window.addEventListener('resize', () => {
-//     rollSlider
-//     currentWidthStagesSlider()
-// })
+$selectTypeSystemOptions.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        $selectTypeSystemOptions.forEach((el) => {
+            el.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    })
+})
+
+$selectTypeSystem.addEventListener('click', (e) => e.stopPropagation())
+document.addEventListener('click', (e) => {
+    $selectTypeSystem.classList.remove('active')
+})
+
+let $currentOptionText = ''
+$selectTypeSystem.addEventListener('click', (event) => {
+    if (event.target.hasAttribute('data-option')) {
+        const $currentOption = event.target.closest('[data-id]')
+        $selectTypeSystemType.innerText = $currentOption.textContent
+        $currentOptionText = $currentOption.textContent
+    }
+})

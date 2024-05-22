@@ -1,0 +1,178 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-main_1);
+  background-color: var(--color-main_1);
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 500;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.button:hover {
+  background-color: #271791;
+}
+.input {
+  padding: 0 15px;
+  border-radius: 10px;
+  border: solid 1px #EDEDF1;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-main_2);
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-main_2);
+}
+.input:focus {
+  outline: solid 1px var(--color-main_1);
+}
+.input-focus {
+  top: calc(30% - 10px);
+  color: var(--color-main_3);
+  font-family: Onest;
+  font-size: 9px;
+  line-height: 12px;
+}
+.wrapper-input {
+  position: relative;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px #EDEDF1;
+  margin-top: 12px;
+}
+.input-title {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 15px;
+  font-family: var(--font-main_2);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: var(--color-main_3);
+  transition: var(--transition);
+}
+.form-review {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'title title title' 'wrapper-input_1 wrapper-input_2 select-book' 'wrapper-input_3 wrapper-input_3 wrapper-input_3' 'button button button';
+  gap: 12px;
+  margin-top: clamp(28px, 5vw, 46px);
+}
+@media (max-width: 780px) {
+  .form-review {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'title' 'wrapper-input_1' 'wrapper-input_2' 'select-book' 'wrapper-input_3' 'button';
+  }
+}
+.form-review__title {
+  grid-area: title;
+  font-family: var(--font-main_1);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.form-review__wrapper-input {
+  position: relative;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px #EDEDF1;
+  margin-top: 12px;
+  margin-top: 0;
+}
+.form-review__wrapper-input::first-of-type {
+  grid-area: wrapper-input_1;
+}
+.form-review__wrapper-input:nth-of-type(2) {
+  grid-area: wrapper-input_2;
+}
+.form-review__wrapper-input:nth-of-type(3) {
+  grid-area: wrapper-input_3;
+  height: 146px;
+}
+@media (max-width: 780px) {
+  .form-review__wrapper-input:nth-of-type(3) {
+    height: 280px;
+  }
+}
+.form-review__wrapper-input:nth-of-type(3) .form-review__text {
+  top: calc(17% - 8px);
+}
+@media (max-width: 780px) {
+  .form-review__wrapper-input:nth-of-type(3) .form-review__text {
+    top: calc(8% - 8px);
+  }
+}
+.form-review__wrapper-input:nth-of-type(3) .form-review__input {
+  padding: 20px 15px;
+  resize: none;
+}
+.form-review__wrapper-input:nth-of-type(3) .form-review__input:focus + .form-review__text,
+.form-review__wrapper-input:nth-of-type(3) .form-review__input.focus + .form-review__text {
+  top: calc(10% - 8px);
+}
+@media (max-width: 780px) {
+  .form-review__wrapper-input:nth-of-type(3) .form-review__input:focus + .form-review__text,
+  .form-review__wrapper-input:nth-of-type(3) .form-review__input.focus + .form-review__text {
+    top: calc(5% - 8px);
+  }
+}
+.form-review__text {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 15px;
+  font-family: var(--font-main_2);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: var(--color-main_3);
+  transition: var(--transition);
+}
+.form-review__input:focus + .form-review__text,
+.form-review__input.focus + .form-review__text {
+  top: calc(30% - 10px);
+  color: var(--color-main_3);
+  font-family: Onest;
+  font-size: 9px;
+  line-height: 12px;
+}
+.form-review__input {
+  padding: 0 15px;
+  border-radius: 10px;
+  border: solid 1px #EDEDF1;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-main_2);
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-main_2);
+}
+.form-review__input:focus {
+  outline: solid 1px var(--color-main_1);
+}
+.form-review__button {
+  grid-area: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-main_1);
+  background-color: var(--color-main_1);
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 500;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  justify-self: start;
+  padding: 17px 30px;
+}
+.form-review__button:hover {
+  background-color: #271791;
+}

@@ -1,0 +1,24 @@
+.banner {
+  background-color: #F1F1F3;
+  padding-top: clamp(20px, 6vw, 60px);
+  padding-bottom: clamp(44px, 6vw, 73px);
+}
+.banner picture {
+  font-size: 0;
+}
+.banner__text,
+.banner__link {
+  margin-top: 13px;
+  font-family: var(--font-main_1);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.banner__link {
+  color: var(--color-main_1);
+  text-decoration: underline;
+}
+.container-banner {
+  display: grid;
+  grid-template-columns: 1fr;
+}

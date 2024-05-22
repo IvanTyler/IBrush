@@ -1,0 +1,24 @@
+.path-js-books {
+    grid-area: path-js-books;
+    margin-top: clamp(21px, 3vw, 37px);
+    overflow-x: auto;
+    padding-bottom: 17px;
+
+    &__wrapper-img {
+        position: relative;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-main_1);
+        border-radius: 7px;
+    }
+
+    &::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #ECECF3;
+        border-radius: 7px;
+    }
+}

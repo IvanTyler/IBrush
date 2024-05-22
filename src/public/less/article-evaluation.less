@@ -1,0 +1,48 @@
+.article-evaluation {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 12px 8px;
+    grid-template-areas:
+        'title title'
+        'number rating'
+    ;
+    margin-top: 37px;
+
+    &__title {
+        grid-area: title;
+        font-family: var(--font-main_1);
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--color-main_2)
+    }
+
+    &__number {
+        grid-area: number;
+        font-family: var(--font-main_1);
+        font-size: 28px;
+        line-height: 31px;
+        font-weight: 500;
+        color: var(--color-main_2)
+    }
+}
+
+.article-evaluation-rating {
+    grid-area: rating;
+    display: flex;
+    gap: 5px;
+
+    &__item {
+        background-image: url('/src/public/icon/star-gray.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 25px;
+        height: 23px;
+    }
+
+    &__item.active {
+        background-image: url('/src/public/icon/star-yellow.svg');
+    }
+}

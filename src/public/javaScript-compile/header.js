@@ -10,6 +10,11 @@ $courses.addEventListener('click', (e) => {
 
     activeBlock($courses)
     activeBlock($courses_list)
+    $button_open_modal.style.zIndex = '-1'
+
+    if (!$courses.classList.contains('open')) {
+        $button_open_modal.style.zIndex = '0'
+    }
 })
 
 $courses_list.addEventListener('click', (e) => e.stopPropagation())
@@ -21,6 +26,8 @@ function activeBlock(element) {
         element.classList.add('open')
 }
 
+
+
 $sandwitch.addEventListener('click', (e) => {
     e.stopPropagation()
 
@@ -29,6 +36,8 @@ $sandwitch.addEventListener('click', (e) => {
 })
 
 document.addEventListener('click', (e) => {
+    $button_open_modal.style.zIndex = '0'
+
     containsClass($courses)
     containsClass($courses_list)
     containsClass($header_menu)
