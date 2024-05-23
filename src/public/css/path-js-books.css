@@ -26,6 +26,7 @@
 .path-js-books::-webkit-scrollbar-thumb {
   background-color: var(--color-main_1);
   border-radius: 7px;
+  border: 10px solid var(--color-main_1);
 }
 .path-js-books::-webkit-scrollbar {
   height: 5px;
