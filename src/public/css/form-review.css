@@ -29,6 +29,7 @@
 }
 .input:focus {
   outline: solid 1px var(--color-main_1);
+  border-radius: 10px;
 }
 .input-focus {
   top: calc(30% - 10px);
@@ -154,6 +155,7 @@
 }
 .form-review__input:focus {
   outline: solid 1px var(--color-main_1);
+  border-radius: 10px;
 }
 .form-review__button {
   grid-area: button;
