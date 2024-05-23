@@ -7,6 +7,22 @@
 .path-js-books__wrapper-img {
   position: relative;
 }
+.path-js-books__wrapper-img::before {
+  content: '';
+  position: absolute;
+  background-image: url('/src/public/icon/triangle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 4px;
+  left: 77px;
+  width: 18px;
+  height: 13px;
+}
+@media (max-width: 800px) {
+  .path-js-books__wrapper-img::before {
+    display: none;
+  }
+}
 .path-js-books::-webkit-scrollbar-thumb {
   background-color: var(--color-main_1);
   border-radius: 7px;

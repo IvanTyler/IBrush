@@ -6,6 +6,22 @@
 
     &__wrapper-img {
         position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('/src/public/icon/triangle.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            bottom: 4px;
+            left: 77px;
+            width: 18px;
+            height: 13px;
+
+            @media (max-width: 800px) {
+                display: none;
+            }
+        }
     }
 
     &::-webkit-scrollbar-thumb {
