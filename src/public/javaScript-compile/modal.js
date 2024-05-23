@@ -7,5 +7,5 @@ $close_modal.addEventListener('click', () => $modal.style.display = 'none');
 $modal.addEventListener('click', () => $modal.style.display = 'none');
 
 $form_start_studying.addEventListener('click', (e) => e.stopPropagation());
-$button_open_modal.addEventListener('click', () => $modal.style.display = 'block');
 
+$button_open_modal.addEventListener('click', () => $modal.style.display = 'block');
