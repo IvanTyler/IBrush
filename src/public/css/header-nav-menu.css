@@ -42,6 +42,7 @@
   background-image: url('../icon/arrow.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  transition: var(--transition);
 }
 .header-nav-menu__item.open:nth-child(2)::after {
   transform: rotate(180deg);
