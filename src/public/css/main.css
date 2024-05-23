@@ -68,7 +68,6 @@ body {
 }
 .input:focus {
   outline: solid 1px var(--color-main_1);
-  border-radius: 10px;
 }
 .input-focus {
   top: calc(30% - 10px);
@@ -612,7 +611,6 @@ body {
 }
 .form-review__input:focus {
   outline: solid 1px var(--color-main_1);
-  border-radius: 10px;
 }
 .form-review__button {
   grid-area: button;
@@ -937,7 +935,6 @@ body {
 }
 .form-start-studying__input:focus {
   outline: solid 1px var(--color-main_1);
-  border-radius: 10px;
 }
 .form-start-studying__input:focus + .form-start-studying__text,
 .form-start-studying__input.focus + .form-start-studying__text {
