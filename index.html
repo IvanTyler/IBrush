@@ -3,237 +3,1118 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iBrush</title>
-    <link rel="stylesheet" href="/src/public/css/main.css">
-    <script defer src="/src/public/javaScript/main.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link href="/public/lightbox/css/lightbox.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <script defer src="/public/lightbox/js/lightbox-plus-jquery.min.js"></script>
+    <script defer src="/public/lightbox/js/lightbox.js"></script>
+    <script defer src="/public/javaScript/main.js"></script>
+
+    <title>FurniWP</title>
 </head>
 
 <body>
     <div class="wrapper-main">
         <header class="header">
             <div class="container container-header">
-                <a href="/" class="header__link">
-                    <img src="/src/public/icon/logo.svg" alt="logo" class="header__logo">
-                </a>
+                <div class="header__logo-link">
+                    <img src="/public/icon/common/logo.svg" alt="logo" class="header__logo">
+                </div>
                 <ul class="header-nav-menu">
                     <li class="header-nav-menu__item">
-                        <span href="#furnishingProcess" class="header-nav-menu__text">Статьи</span>
+                        <a href="#aboutUs" class="header-nav-menu__link">About us</a>
                     </li>
-                    <li id="courses" class="header-nav-menu__item">
-                        <span href="#designProject" class="header-nav-menu__text">Курсы</span>
-                        <ul class="javaScript-courses-list">
-                            <li class="javaScript-courses-list__item">
-                                JavaScript Pro
-                            </li>
-                            <li class="javaScript-courses-list__item">
-                                JavaScript для новчиков
-                            </li>
-                            <li class="javaScript-courses-list__item">
-                                JavaScript ниндзя
-                            </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#apartments" class="header-nav-menu__link">Services</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#portfolio" class="header-nav-menu__link">Portfolio</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#furnishingProcess" class="header-nav-menu__link">Process</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#designProject" class="header-nav-menu__link">Design project</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#faq" class="header-nav-menu__link">FAQ</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="https://partners.furni.ae" target="_blank" class="header-nav-menu__link">For
+                            partners</a>
+                    </li>
+                    <li id="show-select-language" class="header-nav-menu__item">
+                        <span class="header-nav-menu__text">Eng</span>
+                        <ul class="select-language">
+                            <li class="select-language__item active">English</li>
+                            <li class="select-language__item">Russian</li>
                         </ul>
-                    </li>
-                    <li class="header-nav-menu__item">
-                        <span href="#faq" class="header-nav-menu__text">Новости</span>
-                    </li>
-                    <li class="header-nav-menu__item">
-                        <span target="_blank" class="header-nav-menu__text">
-                            О нас
-                        </span>
                     </li>
                 </ul>
-                <button class="header__button">
-                    Начать учиться
-                </button>
-                <img src="/src/public/icon/sendwitch.svg" alt="Открыть меню" class="header__sandwich">
+                <ul class="header-nav-menu mobile">
+                    <li class="header-nav-menu__item">
+                        <a href="#aboutUs" class="header-nav-menu__link">About us</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#apartments" class="header-nav-menu__link">Services</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#portfolio" class="header-nav-menu__link">Portfolio</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#furnishingProcess" class="header-nav-menu__link">Process</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#designProject" class="header-nav-menu__link">Design project</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="#faq" class="header-nav-menu__link">FAQ</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <a href="https://partners.furni.ae" target="_blank" class="header-nav-menu__link">For
+                            partners</a>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <ul class="select-language-mobile">
+                            <li class="select-language-mobile__item active">Eng</li>
+                            <li class="select-language-mobile__item">Ru</li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-menu__item">
+                        <button id="request_now_mobile" class="header__request mobile">Request now</button>
+                    </li>
+                    <li class="header-nav-menu__item show-select-language">
+                        <ul class="social-media">
+                            <li class="social-media__item">
+                                <a href="" class="social-media__link">
+                                    <img src="/public/icon/social-media/instagram.svg" alt="instagram"
+                                        class="social-media__icon">
+                                </a>
+                            </li>
+                            <li class="social-media__item">
+                                <a href="" class="social-media__link">
+                                    <img src="/public/icon/social-media/fb.svg" alt="facebook"
+                                        class="social-media__icon">
+                                </a>
+                            </li>
+                            <li class="social-media__item">
+                                <a href="" class="social-media__link">
+                                    <img src="/public/icon/social-media/whatsApp.svg" alt="whatsApp"
+                                        class="social-media__icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="sandwich" class="header__sandwich" alt="sandwich"></div>
+                <button id="request_now" class="header__request">Request now</button>
             </div>
         </header>
+
         <main class="main">
-            <section class="path-js">
-                <div class="container container-path-js">
-                    <h1 class="path-js__title">
-                        Путь JavaScript
+            <section class="slider">
+                <div class="container container-slider">
+                    <h1 class="slider__title">
+                        Turnkey <span class="slider__text">apartment transformation
+                            service</span>
+                        in Dubai
                     </h1>
-                    <div class="path-js-books">
-                        <div class="path-js-books__wrapper-img">
-                            <div class="path-js-date">
-                                <span class="path-js-date__number">
-                                    12
-                                </span>
-                                <span class="path-js-date__month">
-                                    Апреля
-                                </span>
-                            </div>
-                            <img src="/src/public/img/books.png" alt="books" class="path-js-books__img">
-                        </div>
-                    </div>
-                    <span class="path-js__text">
-                        Можно выделить три основных направления для прогресса JavaScript
-                    </span>
-                    <div class="path-js__line"></div>
-                </div>
-            </section>
-            <section class="server-js">
-                <div class="container server-js-container">
-                    <h2 class="server-js__title">
-                        Серверный JavaScript
-                    </h2>
-                    <img src="/src/public/icon/quotation.svg" alt="quotation" class="server-js__img">
-                    <div class="server-js__description">
-                        Разработчики и клиенты часто неправильно понимают, что такое система.
-                        Они видят графический интерфейс и думают, что он и есть система.
-                        Они определяют систему в терминах графического интерфейса и считают,
-                        что должны сразу начать работу с графическим интерфейсом.
-                        Они не понимают важнейшего принципа: ввод/вывод не важен.
-                    </div>
-                    <span class="server-js__author">
-                        — Р. Мартин
-                    </span>
-                </div>
-            </section>
-            <section class="banner">
-                <div class="container container-banner">
-                    <picture>
-                        <source media="(max-width:680px)" srcset="/src/public/img/banner-mobile.png">
-                        <img src="/src/public/img/banner.png" alt="banner">
-                    </picture>
-                    <span class="banner__text">
-                        Реклама на
-                        <a href="http://blabla.com/" target="_blank" class="banner__link">
-                            blabla.com
-                        </a>
-                    </span>
-                </div>
-            </section>
-            <section class="conclusion">
-                <div class="container conclusion-container">
-                    <h2 class="conclusion__title">Заключение</h2>
-                    <div class="conclusion__description">
-                        Синхрония осознаёт сюжетный верлибр.
-                        Мифопорождающее текстовое устройство диссонирует лирический субъект.
-                        Абстрактное высказывание пространственно просветляет деструктивный символ.
-                        Ямб, несмотря на то, что все эти характерологические черты отсылают
-                        не к единому образу нарратора, интегрирует мифопоэтический хронотоп.
-                        Действительно, ударение приводит палимпсест. Контрапункт приводит ритм.
+                    <div class="slider__wrapper-img">
+                        <img src="/public/img/apartment-transformation-service/img_1.png" alt="slide_1"
+                            class="slider__img active" />
+                        <img src="/public/img/apartment-transformation-service/img_2.png" alt="slide_2"
+                            class="slider__img" />
+                        <img src="/public/img/apartment-transformation-service/img_3.png" alt="slide_3"
+                            class="slider__img" />
+                        <img src="/public/img/apartment-transformation-service/img_4.png" alt="slide_4"
+                            class="slider__img" />
+                        <img src="/public/img/apartment-transformation-service/img_5.png" alt="slide_5"
+                            class="slider__img" />
+                        <img src="/public/img/apartment-transformation-service/img_6.png" alt="slide_6"
+                            class="slider__img" />
                     </div>
                 </div>
             </section>
-            <section class="review">
-                <div class="container container-review">
-                    <h2 class="review__title">
-                        Что вы думаете об этой книге?
-                    </h2>
-                    <div class="article-evaluation">
-                        <h3 class="article-evaluation__title">
-                            Оцените статью
+
+            <section id="aboutUs" class="services">
+                <div class="container container-services">
+                    <div class="service-furni">
+                        <h2 class="service-furni__title">Furni</h2>
+                        <h3 class="service-furni__sub-title">
+                            Let us take care of the renovation and furnish
+                            your apartment with furniture, appliances and decor
                         </h3>
-                        <span class="article-evaluation__number">4</span>
-                        <ul class="article-evaluation-rating">
-                            <li class="article-evaluation-rating__item active"></li>
-                            <li class="article-evaluation-rating__item active"></li>
-                            <li class="article-evaluation-rating__item active"></li>
-                            <li class="article-evaluation-rating__item active"></li>
-                            <li class="article-evaluation-rating__item"></li>
+                        <img src="/public/img/services/img_1.png" alt="" class="service-furni__img">
+                    </div>
+                    <div class="services-furni services-item_1">
+                        <div class="services-furni__circle">
+                            <img src="/public/img/services/img_2.png" alt="" class="services-furni__img">
+                        </div>
+                        <h2 class="services-furni__title">
+                            Service Selection or All-Inclusive Package Option
+                        </h2>
+                        <p class="services-furni__description">
+                            You will receive a fully renovated apartment with furniture and appliances: we will handle
+                            DEWA
+                            connection,
+                            internet setup, curtain hanging, bed-making, decor placement, and other essentials for a
+                            comfortable life
+                        </p>
+                    </div>
+                    <div class="services-furni services-item_2">
+                        <div class="services-furni__circle">
+                            <img src="/public/img/services/img_3.png" alt="" class="services-furni__img">
+                        </div>
+                        <h2 class="services-furni__title">
+                            All Processes Online
+                        </h2>
+                        <p class="services-furni__description">
+                            Order our services, monitor progress, and accept
+                            your apartment from anywhere in the world
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="apartments" class="home-care-service">
+                <div class="container container-home-care-service">
+                    <h2 class="home-care-service__title">
+                        A service that takes care of your apartment
+                    </h2>
+                    <div class="home-care-service-furni furnishing">
+                        <h2 class="home-care-service-furni__title furnishing">Furnishing</h2>
+                        <ul class="furnishing-list">
+                            <li class="furnishing-list__item">
+                                <span class="furnishing-list__number">1</span>
+                                <span class="furnishing-list__text">
+                                    We will create a design project,
+                                    procure furniture, appliances, and decor
+                                </span>
+                            </li>
+                            <li class="furnishing-list__item">
+                                <span class="furnishing-list__number">2</span>
+                                <span class="furnishing-list__text">
+                                    We will handle water, gas,
+                                    electricity, and Internet connection
+                                </span>
+                            </li>
+                            <li class="furnishing-list__item">
+                                <span class="furnishing-list__number">3</span>
+                                <span class="furnishing-list__text">
+                                    We will deliver everything, arrange it in place,
+                                    and prepare the apartment for move-in
+                                </span>
+                            </li>
                         </ul>
+                        <img src="/public/img/home-care-service/img_1.png" alt="isometric"
+                            class="home-care-service-furni__img isometric">
+                        <div class="costs-excluding">
+                            <h2 class="costs-excluding__title">
+                                Service costs excluding furniture,
+                                appliances, and decor
+                            </h2>
+                            <ul class="costs-excluding-furniture-list">
+                                <li class="costs-excluding-furniture-list__item">Studio – 3500 AED</li>
+                                <li class="costs-excluding-furniture-list__item">1 bedroom – 4500 AED</li>
+                                <li class="costs-excluding-furniture-list__item">2 bedrooms – 5500 AED</li>
+                                <li class="costs-excluding-furniture-list__item">3 bedrooms – 6500 AED</li>
+                            </ul>
+                            <img src="/public/img/home-care-service/img_2.png" alt="sofa"
+                                class="costs-excluding__img sofa">
+                        </div>
                     </div>
-                    <form action="" class="form-review">
-                        <h3 class="form-review__title">
-                            Добавить комментарий к книге
-                        </h3>
-                        <div class="form-review__wrapper-input">
-                            <input type="text" class="form_input form-review__input">
-                            <span class="form-review__text">Имя</span>
+
+                    <div class="home-care-service-furni unique-interior-design">
+                        <h2 class="home-care-service-furni__title">
+                            Unique interior design project
+                        </h2>
+                        <div class="home-care-service-furni__description-wrapper">
+                            <p class="home-care-service-furni__description">
+                                With the design project, you'll be confident in the result.
+                                It allows you to pre-calculate the furnishing cost
+                                and accommodate everything you desire. <span
+                                    class="home-care-service-furni__learn-more">Learn
+                                    more</span>
+                            </p>
+                            <img src="/public/img/home-care-service/img_3.png" alt="palette"
+                                class="home-care-service-furni__img palette">
                         </div>
-                        <div class="form-review__wrapper-input">
-                            <input type="text" class="form_input form-review__input">
-                            <span class="form-review__text">Email</span>
-                        </div>
-                        <div class="form-review__wrapper-input">
-                            <textarea type="text" class="form_input form-review__input"></textarea>
-                            <span class="form-review__text">Ваш отзыв</span>
-                        </div>
-                        <div class="books">
-                            <div class="books__item select-book">
-                                <span class="select-book__type">Выберите книгу</span>
-                                <ul class="select-book-list"></ul>
+                        <div class="home-care-service-furni__price-wrapper">
+                            <div class="home-care-service-furni__price">
+                                <h3 class="home-care-service-furni__price-title">Price</h3>
+                                <span class="home-care-service-furni__current-price">690 AED</span>
+                                <span class="home-care-service-furni__old-price">1500 AED</span>
                             </div>
+                            <img src="/public/img/home-care-service/img_3.png" alt="palette"
+                                class="home-care-service-furni__img palette_mobile">
+                            <img src="/public/img/home-care-service/img_4.png" alt="plan"
+                                class="home-care-service-furni__img plan">
                         </div>
-                        <button class="form-review__button">Отправить</button>
+                        <div class="get-design-project">
+                            <img src="/public/img/home-care-service/img_6.png" alt="present"
+                                class="get-design-project__img">
+                            <p class="get-design-project__text">
+                                Get a free design project when you order furnishing!
+                            </p>
+                            <img src="/public/img/home-care-service/img_4.png" alt="plan"
+                                class="home-care-service-furni__img plan_mobile">
+                        </div>
+                    </div>
+
+                    <div class="home-care-service-furni renovation">
+                        <h2 class="home-care-service-furni__title renovation">Renovation</h2>
+                        <div class="home-care-service-furni__description-renovation">
+                            <p class="home-care-service-furni__description renovation">
+                                We will paint walls, install wall panels, cabinets, change kitchen facades, and external
+                                electrical
+                                work
+                            </p>
+                            <img src="/public/img/home-care-service/img_5.png" alt="ladder"
+                                class="home-care-service-furni__img ladder">
+                        </div>
+                    </div>
+
+                    <button class="home-care-service__button">
+                        Discuss your project
+                    </button>
+                </div>
+            </section>
+
+            <section id="portfolio" class="portfolio">
+                <div class="container container-portfolio">
+                    <div class="our-portfolio">
+                        <h2 class="our-portfolio__title">Our portfolio</h2>
+                        <p class="our-portfolio__description">
+                            Examples of custom furnishing projects we have completed for our clients
+                        </p>
+                    </div>
+
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_1.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_2.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_3.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_4.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_5.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                    <div class="our-portfolio-item">
+                        <img src="/public/img/our-portfolio/img_6.png" alt="" class="our-portfolio-item__img">
+                        <a href="" class="our-portfolio-item__link">
+                            <span class="our-portfolio-item__name">Abstract Elegance</span>
+                            <span class="our-portfolio-item__circle">
+                                <img src="/public/icon/common/arrow-right.svg" alt="arrow right"
+                                    class="our-portfolio-item__icon">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="furnishingProcess" class="furnishing-process">
+                <div class="container container-furnishing-process">
+                    <h2 class="furnishing-process__title">
+                        Furnishing Process
+                    </h2>
+                    <div class="furnishing-process-description">
+                        <h2 class="furnishing-process-description__title by-yourself">
+                            <img src="/public/img/furnishing-process/table-red-icon.svg" alt="by yourself"
+                                class="furnishing-process-description__icon">
+                            By yourself
+                        </h2>
+                        <h2 class="furnishing-process-description__title with-furni">
+                            <img src="/public/img/furnishing-process/table-green-icon.svg" alt="with furni"
+                                class="furnishing-process-description__icon">
+                            With Furni
+                        </h2>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            measurements
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            furniture and appliances selection
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            Move-in permit
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            utilities connection
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            receiving deliveries
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            measurements
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                        <h2 class="furnishing-process-description__name-chapter">
+                            measurements
+                        </h2>
+                        <div class="furnishing-process-description__column by-yourself-column">
+                            <img src="/public/img/furnishing-process/excluded.svg" alt="not"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                Contractor search and apartment measurement
+                            </span>
+                            <span class="furnishing-process-description__period-of-time">
+                                1-2 visits, 4-5 hours
+                            </span>
+                        </div>
+                        <div class="furnishing-process-description__column with-furni-column">
+                            <img src="/public/img/furnishing-process/checked.svg" alt="checked"
+                                class="furnishing-process-description__icon">
+                            <span class="furnishing-process-description__name">
+                                We'll take measurements of your apartment
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="with-furni-saving">
+                        <img src="/public/img/furnishing-process/bag-money.png" alt="bag-money"
+                            class="with-furni-saving__img">
+                        <p class="with-furni-saving__description">
+                            With Furni, you save around 2,000 AED on taxi expenses
+                            trips to the shops and receiving deliveries at your apartment
+                        </p>
+                        <img src="/public/img/furnishing-process/coins.png" alt="coins"
+                            class="with-furni-saving__img coins">
+                    </div>
+                </div>
+            </section>
+
+            <section class="get-shopping-list-free">
+                <div class="container container-shopping-list-free">
+                    <div class="get-shopping-list-free__body">
+                        <h2 class="get-shopping-list-free__title">
+                            Get a shopping list for free
+                        </h2>
+
+                        <h3 class="get-shopping-list-free__sub-title">
+                            A comfortable life can be challenging without these 46 essential items.
+                            Furni made a shopping list with everything you need
+                        </h3>
+
+                        <form action="" class="form-get-shopping-list-free">
+                            <input type="text" placeholder="Name" class="form-get-shopping-list-free__input name">
+                            <input type="text" placeholder="+971 (039) – 039 – 939"
+                                class="form-get-shopping-list-free__input phone">
+                            <button class="form-get-shopping-list-free__button">
+                                Send to WhatsApp
+                            </button>
+                        </form>
+
+                        <img src="/public/img/get-a-shopping-list-or-free/basket.png" alt="basket"
+                            class="get-shopping-list-free__img">
+                    </div>
+                </div>
+            </section>
+
+            <section class="our-projects">
+                <div class="container container-our-project">
+                    <h2 class="our-projects__title">
+                        Our Projects
+                    </h2>
+                    <div class="our-projects__wrapper">
+                        <div class="our-projects__wrapper-slider">
+                            <img src="/public/img/our-projects/arrow.png" class="our-projects__arrow prev-slide hide">
+                            <ul class="our-projects-slider">
+                                <li class="our-projects-slider__item active">
+                                    <p class="our-projects-slider__description">
+                                        Меблировка, техника и декор для однокомнатных апартаментов
+                                    </p>
+                                </li>
+                                <li class="our-projects-slider__item">
+                                    <p class="our-projects-slider__description">
+                                        Дизайн-проект и меблировка для двухкомнатных апартаментов в Dubai Hills
+                                    </p>
+                                </li>
+                                <li class="our-projects-slider__item">
+                                    <p class="our-projects-slider__description">
+                                        Сервис по меблировке ваших апартаментов в Дубае
+                                    </p>
+                                </li>
+                                <li class="our-projects-slider__item">
+                                    <p class="our-projects-slider__description">
+                                        Мебель, бытовая техника и декор для однокомнатных апартаментов
+                                    </p>
+                                </li>
+                            </ul>
+                            <img src="/public/img/our-projects/arrow.png" class="our-projects__arrow next-slide">
+                        </div>
+                    </div>
+                    <ul class="our-projects-slider-switch">
+                        <li class="our-projects-slider-switch__item active">
+                        </li>
+                        <li class="our-projects-slider-switch__item">
+                        </li>
+                        <li class="our-projects-slider-switch__item">
+                        </li>
+                        <li class="our-projects-slider-switch__item">
+                        </li>
+                    </ul>
+            </section>
+            <ul class="cabinets-banner-list-photo">
+                <li class="cabinets-banner-list-photo__item">
+                    <img src="" alt="" class="cabinets-banner-list-photo__img">
+                </li>
+                <li class="cabinets-banner-list-photo__item">
+                    <img src="" alt="" class="cabinets-banner-list-photo__img">
+                </li>
+                <li class="cabinets-banner-list-photo__item">
+                    <img src="" alt="" class="cabinets-banner-list-photo__img">
+                </li>
+            </ul>
+            <section class="gallery">
+                <div class="container container-gallery">
+                    <h2 class="gallery__title">Gallery</h2>
+                    <ul class="gallery-list desktop">
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_1.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_1.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_5.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_5.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a><a href="/public/img/Gallery/big-img/image_9.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_10.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_2.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_3.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_6.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_10.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_3.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_2.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_7.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_11.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/mini-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_14.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_14.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_13.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_4.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_4.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_8.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_12.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_12.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_15.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_1">
+                                <img src="/public/img/Gallery/big-img/image_15.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="gallery-list mobile-list_1">
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_1.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_1.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_5.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_5.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a><a href="/public/img/Gallery/big-img/image_9.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_10.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_4.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_4.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_15.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_15.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_2.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_3.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_10.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_8.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_6.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_3.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_2.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_7.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_14.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_14.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_8.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/mini-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_13.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_12.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_2">
+                                <img src="/public/img/Gallery/big-img/image_12.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="gallery-list mobile-list_2">
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_1.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_1.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_5.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_5.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a><a href="/public/img/Gallery/big-img/image_9.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_10.png" alt=""
+                                    class="gallery-list__img example-image">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_4.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_4.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_15.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_15.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_3.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_2.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_14.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_14.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_13.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                        <li class="gallery-list__item">
+                            <a href="/public/img/Gallery/big-img/image_2.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_3.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_10.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_8.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_6.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_6.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_7.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_8.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_8.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/mini-img/image_13.png" alt="" class="gallery-list__img">
+                            </a>
+                            <a href="/public/img/Gallery/big-img/image_12.png"
+                                class="gallery-list__link example-image-link" data-lightbox="example-set_3">
+                                <img src="/public/img/Gallery/big-img/image_12.png" alt="" class="gallery-list__img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="designProject" class="get-design-project-gift">
+                <div class="container container-get-design-project-gift">
+                    <div class="get-design-project-gift__body">
+                        <h2 class="get-design-project-gift__title">
+                            Get a design project as a gift
+                            <img src="/public/img/get-design-project-gift/present.png" alt="present"
+                                class="get-design-project-gift__img present">
+                        </h2>
+                        <h3 class="get-design-project-gift__sub-title">
+                            Order your furniture and receive a
+                            complimentary individual design project
+                        </h3>
+                        <button class="get-design-project-gift__button">
+                            Discuss your project
+                        </button>
+                        <img src="/public//img/get-design-project-gift/img-apartment.png" alt="apartment"
+                            class="get-design-project-gift__img apartment">
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="faq">
+                <div class="container container-faq">
+                    <h2 class="faq__title">faq</h2>
+                    <ul class="faq-list">
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">1</span>
+                            <h3 class="faq-list-item__title">
+                                Можно заказать только одну услугу, например, только ремонт?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Да, конечно, вы можете заказать только те услуги, которые вам нужны
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">2</span>
+                            <h3 class="faq-list-item__title">
+                                Что входит в дизайн-проект?
+                            </h3>
+                            <ul class="faq-list-item__list">
+                                <li class="faq-list-item__list-item">Замер квартиры</li>
+                                <li class="faq-list-item__list-item">Мудборд с мебелью, техникой и декором</li>
+                                <li class="faq-list-item__list-item">План квартиры с расстановкой мебели и техники</li>
+                                <li class="faq-list-item__list-item">
+                                    <a href="" class="faq-list-item__link">Узнать подробнее</a>
+                                    или
+                                    <a href="" class="faq-list-item__link">смотреть файлы</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">3</span>
+                            <h3 class="faq-list-item__title">
+                                Где находится ваше производство?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Мы сотрудничаем с надежными фабриками, у производство которых находятся в Турции, Индии
+                                и
+                                Китае
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">4</span>
+                            <h3 class="faq-list-item__title">
+                                Чем занимается супервайзер?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Супервайзер принимает доставки, контролирует сборку мебели и установку бытовой техники
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">5</span>
+                            <h3 class="faq-list-item__title">
+                                Как работает гарантия?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Наша гарантия распространяется на любые заводские дефекты мебельных изделий.
+                                С условиями вы можете ознакомиться <a href="" class="faq-list-item__link">Здесь</a>
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">6</span>
+                            <h3 class="faq-list-item__title">
+                                Как я могу оплатить свой заказ?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Для начала работ необходимо внести предоплату на наш расчетный счет или наличными в
+                                размере
+                                100% суммы заказа
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">7</span>
+                            <h3 class="faq-list-item__title">
+                                Какие сроки разработки дизайн-проекта?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                4-5 дней с момента интервью с дизайнером
+                            </p>
+                        </li>
+                        <li class="faq-list-item">
+                            <span class="faq-list-item__number">8</span>
+                            <h3 class="faq-list-item__title">
+                                Как быстро будет готова меблировка?
+                            </h3>
+                            <p class="faq-list-item__description">
+                                Ваше жилье будет готово к заселению через 14 дней после внесения предоплаты
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="make-a-request">
+                <div class="container container-make-a-request">
+                    <h2 class="make-a-request__title">Make a request</h2>
+                    <h3 class="make-a-request__sub-title">We'll call you back from 9am to 9pm</h3>
+                    <form action="" id="make-a-request-form-black" class="make-a-request-form">
+                        <input type="text" name="name" id="make-request-form_black_name" placeholder="Name"
+                            class="make-a-request-form__input">
+                        <input type="number" name="phone" id="make-request-form_black_phone"
+                            placeholder="+ 971 (585) 029 – 099" class="make-a-request-form__input phone">
+                        <input type="email" name="email" id="make-request-form_black_email" placeholder="Email"
+                            class="make-a-request-form__input">
+                        <input type="text" name="call" id="make-request-form_black_call"
+                            placeholder="When should we call you?" class="make-a-request-form__input">
+                        <button class="make-a-request-form__button">
+                            Make a request
+                        </button>
+
+                        <div class="make-a-request-form__message-error">
+                        </div>
                     </form>
                 </div>
             </section>
         </main>
+
         <footer class="footer">
             <div class="container container-footer">
-                <h2 class="footer__title">Похожие посты</h2>
-                <div class="posts-list-wrapper">
-                    <ul class="posts-list">
-                        <li class="posts-list-item">
-                            <div class="posts-list-item__wrapper">
-                                <img src="/src/public/img/react.png" alt="react" class="posts-list-item__img">
-                            </div>
-                            <span class="posts-list-item__date">12 декабря</span>
-                            <span class="posts-list-item__name">
-                                События жизненного цикла ReactJS
-                            </span>
+                <div class="footer__column">
+                    <img src="/public/icon/common/logo.svg" alt="logo" class="footer__logo">
+                    <ul class="social-media footer">
+                        <li class="social-media__item">
+                            <a href="" class="social-media__link">
+                                <img src="/public/icon/social-media/instagram.svg" alt="instagram"
+                                    class="social-media__icon">
+                            </a>
                         </li>
-                        <li class="posts-list-item">
-                            <div class="posts-list-item__wrapper">
-                                <img src="/src/public/img/grid.png" alt="grid" class="posts-list-item__img">
-                            </div>
-                            <span class="posts-list-item__date">12 декабря</span>
-                            <span class="posts-list-item__name">
-                                CSS Grids. Полное руководство
-                            </span>
+                        <li class="social-media__item">
+                            <a href="" class="social-media__link">
+                                <img src="/public/icon/social-media/fb.svg" alt="facebook" class="social-media__icon">
+                            </a>
                         </li>
-                        <li class="posts-list-item">
-                            <div class="posts-list-item__wrapper">
-                                <img src="/src/public/img/js.png" alt="javaScript" class="posts-list-item__img">
-                            </div>
-                            <span class="posts-list-item__date">12 декабря</span>
-                            <span class="posts-list-item__name">
-                                Асинхронность в JavaScript
-                            </span>
+                        <li class="social-media__item">
+                            <a href="" class="social-media__link">
+                                <img src="/public/icon/social-media/whatsApp.svg" alt="whatsApp"
+                                    class="social-media__icon">
+                            </a>
                         </li>
                     </ul>
                 </div>
-                <ul class="posts-switch-slider">
-                    <li class="posts-switch-slider__item active"></li>
-                    <li class="posts-switch-slider__item"></li>
-                    <li class="posts-switch-slider__item"></li>
-                </ul>
+                <div class="footer__column">
+                    <ul class="footer-nav-menu">
+                        <li class="footer-nav-menu__item">Furnishing examples</li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Studio</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">1 bedroom</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Bedroom</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Children’s room</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Home office</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Living room</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <ul class="footer-nav-menu">
+                        <li class="footer-nav-menu__item">Info</li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Delivery</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Payment</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Bedroom</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Warranty</a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <ul class="footer-nav-menu">
+                        <li class="footer-nav-menu__item">Contacts</li>
+                        <li class="footer-nav-menu__item">
+                            <a href="tel:+797143102096" class="footer-nav-menu__link">
+                                +7 (971) 431-02-096
+                            </a>
+                        </li>
+                        <li class="footer-nav-menu__item">
+                            <a href="" class="footer-nav-menu__link">
+                                <a href="mailto:hello@furni.ae" class="footer-nav-menu__link">
+                                    hello@furni.ae
+                                </a>
+                            </a>
+                        </li>
+                        <li class="footer-nav-menu__item">FAST AND SMART FURNITURE TRADING L.L.C</li>
+                    </ul>
+                </div>
             </div>
         </footer>
     </div>
 
-    <div class="modal">
+    <div class="modal-main">
+        <img src="/public/img/our-projects/close.svg" alt="close" class="modal-main__close">
         <div class="container container-modal">
-            <form action="" class="form-start-studying">
-                <img src="/src/public/icon/close.svg" alt="Закрыть модальное окно" class="form-start-studying__close">
-                <h2 class="form-start-studying__title">
-                    Начать учиться
-                </h2>
-                <h3 class="form-start-studying__sub-title">
-                    Оставьте заявку и наш менеджер вам перезвонит.
-                </h3>
-                <div class="form-start-studying__wrapper-input">
-                    <input type="text" class="form_input form-start-studying__input">
-                    <span class="form-start-studying__text">Как Вас зовут</span>
-                </div>
-                <div class="form-start-studying__wrapper-input">
-                    <input type="text" class="form_input form-start-studying__input">
-                    <span class="form-start-studying__text">Ваш email</span>
-                </div>
-                <button class="form-start-studying__button">Отправить</button>
+            <!-- <iframe class="our-projects-video" src="https://www.youtube.com/embed/TeE0KoZ5w7g?si=j6MVSRpik4_CxtI6"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <iframe class="our-projects-video" src="https://www.youtube.com/embed/-MjR4zbQys8?si=LNljDrtpeq0wGSoK"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <iframe class="our-projects-video" src="https://www.youtube.com/embed/s-06FI5TKbw?si=WjMYAFlW2Z0xL0ca"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <iframe class="our-projects-video" src="https://www.youtube.com/embed/ejMMMiHt3Nk?si=4Xky6deN4G9Mij3z"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe> -->
 
-                <div class="form-start-studying__privacy-policy">
-                    Нажимая кнопку «Отправить», вы соглашаетесь с
-                    <a href="" class="form-start-studying__link">
-                        политикой конфиденциальности
-                    </a>
-                </div>
-            </form>
+            <section class="discuss-your-project-modal">
+                <img id="close-form-discuss-your-project" src="/public/icon/common/close-gray.svg" alt="close-modal"
+                    class="discuss-your-project-modal__close">
+                <img src="/public/img/modal-imgs/discuss-your-project.png" alt="discuss-your-project"
+                    class="discuss-your-project-modal__img">
+                <form action="" class="discuss-your-project-form">
+                    <h2 class="discuss-your-project-form__title">
+                        Discuss your project
+                    </h2>
+                    <h3 class="discuss-your-project-form__sub-title">
+                        We'll call you back from 9am to 9pm
+                    </h3>
+                    <input id="input-name-your-project" type="text" placeholder="name"
+                        class="discuss-your-project-form__input">
+                    <input id="input-phone-your-project" type="text" placeholder="+ 971 (585) 029 – 099"
+                        class="discuss-your-project-form__input phone">
+                    <button class="discuss-your-project-form__button">
+                        Request a call
+                    </button>
+                </form>
+            </section>
+            <section class="request-sent thanks-for-choosing-us">
+                <img id='close-modal-choosing-us' src="/public/icon/common/close-gray.svg" alt="close-modal"
+                    class="request-sent__close">
+                <h2 class="request-sent__title">
+                    Thanks for choosing us!
+                </h2>
+                <h3 class="request-sent__sub-title">
+                    Our team will be in touch with you shortly
+                </h3>
+            </section>
+            <section class="request-sent happy-shopping">
+                <img id='close-modal-happy-shopping' src="/public/icon/common/close-gray.svg" alt="close-modal"
+                    class="request-sent__close">
+                <h2 class="request-sent__title">
+                    Happy shopping!
+                </h2>
+                <h3 class="request-sent__sub-title">
+                    We've sent a shopping list for you. If you need help, just tell us.
+                    We would be delighted to create a personalized furnishing project for you
+                </h3>
+            </section>
         </div>
     </div>
 </body>
